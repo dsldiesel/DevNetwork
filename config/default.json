@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://diesel:diesel@merncluster-0ojfl.mongodb.net/test?retryWrites=true&w=majority",
+    "SEED": "myNabalSeed"
+}
