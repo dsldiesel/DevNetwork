@@ -5,7 +5,8 @@ import {
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
-  LOGOUT
+  LOGOUT,
+  NO_TOKEN
 } from '../actions/constants';
 
 const initialState = {
@@ -44,6 +45,13 @@ export default function(state = initialState, action) {
         ...state,
         token: null,
         isAuthed: false,
+        loading: false
+      };
+    case NO_TOKEN:
+      return {
+        ...state,
+        token: null,
+        isAuthenticated: false,
         loading: false
       };
     default:

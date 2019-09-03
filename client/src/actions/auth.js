@@ -7,7 +7,9 @@ import {
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
-  LOGOUT
+  LOGOUT,
+  CLEAR_PROFILE,
+  NO_TOKEN
 } from '../actions/constants';
 import setAuthToken from '../utils/setAuthToken';
 
@@ -29,6 +31,14 @@ export const loadUser = () => async dispatch => {
       type: AUTH_ERROR
     });
   }
+};
+
+// if there is no token
+export const noToken = () => dispatch => {
+  // dispatch the no token action type
+  dispatch({
+    type: NO_TOKEN
+  });
 };
 
 // Login user
@@ -99,6 +109,9 @@ export const register = ({ name, email, pass }) => async dispatch => {
 
 // Logout user
 export const logout = () => dispatch => {
+  dispatch({
+    type: CLEAR_PROFILE
+  });
   dispatch({
     type: LOGOUT
   });

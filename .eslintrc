@@ -19,6 +19,7 @@
   },
   "plugins": ["react"],
   "rules": {
-    "quotes": ["error", "single"]
+    "quotes": ["error", "single"],
+    "no-console": "off"
   }
 }

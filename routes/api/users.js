@@ -1,6 +1,6 @@
 // Requires
 const express = require('express');
-// express validator, allows second parameter in routes with checks
+// express validator, allows second/third parameter in routes with checks
 const { check, validationResult } = require('express-validator');
 const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
