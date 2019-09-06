@@ -1,0 +1,2 @@
+Atlas: mongodb+srv://diesel:diesel@merncluster-0ojfl.mongodb.net/test?retryWrites=true&w=majority
+Local: mongodb://localhost:27017/devCon

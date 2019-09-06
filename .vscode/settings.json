@@ -1,3 +1,5 @@
 {
-  "javascript.format.enable": true
+  "javascript.format.enable": true,
+  "editor.formatOnSave": true,
+  "no-unused-vars": "off"
 }
