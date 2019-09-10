@@ -18,7 +18,7 @@ const Dashboard = ({
   useEffect(() => {
     getCurrentProfile();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [getCurrentProfile]);
   // That array means run only once, (on load)
   return loading && profile === null ? (
     <Spinner />
@@ -32,9 +32,13 @@ const Dashboard = ({
       {profile !== null ? (
         <Fragment>
           <DashboardActions />
-          <Experience experience={profile.experience} />
-          <Education education={profile.education} />
-          <div classNAme="my-2">
+          {profile.experience.length > 0 && (
+            <Experience experience={profile.experience} />
+          )}
+          {profile.education.length > 0 && (
+            <Education education={profile.education} />
+          )}
+          <div className="my-2">
             <button className="btn btn-danger" onClick={() => deleteAccount()}>
               <i className="fas fa-user-minus"></i> Delete my account
             </button>
