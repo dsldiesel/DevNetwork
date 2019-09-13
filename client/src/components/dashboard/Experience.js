@@ -10,7 +10,7 @@ const Experience = ({ experience, deleteExperience }) => {
     <tr key={exp._id}>
       <td>{exp.company}</td>
       <td className="hide-sm">{exp.title}</td>
-      <td>
+      <td className="hide-sm">
         <Moment format="YYYY/MM/DD">{moment.utc(exp.from)}</Moment> -{' '}
         {exp.to === null ? (
           ' Now'
@@ -38,6 +38,7 @@ const Experience = ({ experience, deleteExperience }) => {
             <th>Company</th>
             <th className="hide-sm">Title</th>
             <th className="hide-sm">Years</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>{experiences}</tbody>

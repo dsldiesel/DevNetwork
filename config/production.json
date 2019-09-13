@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb://localhost:27017/devCon",
+  "SEED": "myNabalSeed",
+  "gHubClientId": "5955a39095f8bdcb3117",
+  "gHubClientSecret": "6dfbe60a78243fe729bc2646a102d5928f0482c8"
+}
