@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5000;
+const path = require('path');
 // DB
 const connectDB = require('./config/db');
 connectDB();
@@ -24,8 +25,19 @@ app.use('/api/profile', profileRoutes);
 app.use('/api/posts', postsRoutes);
 app.use('/api/auth', authRoutes);
 
-// Test root GET route
-app.get('/', (req, res) => res.send('API running'));
+// Test root GET route (only for DEV, disable for serving on prod)
+// app.get('/', (req, res) => res.send('API running'));
+
+// Serve static assets in prod
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/build'));
+  // Serve
+  app.get('*', (req, res) =>
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  );
+}
+
 // Listen
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
